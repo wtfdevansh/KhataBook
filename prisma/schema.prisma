@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Table 1: Customer
+model Customer {
+  id           Int           @id @default(autoincrement()) @map("customer_id") // customer_id in DB, 'id' in Prisma client
+  name         String
+  contactNo    String?       @map("contact_no") // Optional, using camelCase for Prisma, snake_case for DB
+  address      String?
+  balance      Float         @default(0.0) // Current balance for the customer
+  transactions Transaction[] // Relation to the Transaction table
+
+  @@map("customers") // Maps the 'Customer' model to a 'customers' table in the DB
+}
+
+// Table 2: Transaction
+model Transaction {
+  id           Int      @id @default(autoincrement()) // Primary key for transactions
+  date         DateTime @default(now()) // Date of the transaction
+  debit        Float    @default(0.0) // Amount debited (money going out)
+  credit       Float    @default(0.0) // Amount credited (money coming in)
+  totalBalance Float    @map("total_balance") // The customer's balance *after* this transaction
+  billNo       String?  @map("bill_no")      // Optional, e.g., an invoice number
+
+  customerId   Int      @map("customer_id") // Foreign key to link to the Customer table
+  customer     Customer @relation(fields: [customerId], references: [id]) // Defines the relationship
+
+  @@map("transactions") // Maps the 'Transaction' model to a 'transactions' table in the DB
+}

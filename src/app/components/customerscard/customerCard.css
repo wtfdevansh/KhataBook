@@ -1,0 +1,10 @@
+.customer-card{
+    border: 5px solid rgb(120, 119, 119);
+    border-radius: 20px;
+    background-color: white;
+    display: inline-block;
+    color: black;
+    padding: 16px;
+    margin: 8px;
+    font-size: 10px;
+}

@@ -1,0 +1,55 @@
+table{
+    border: 2px solid rgb(120, 119, 119);
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    padding: 16px;
+    margin: 8px;
+    font-size: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    
+}
+
+th,td{
+    border: 1px solid rgb(120, 119, 119);
+    padding: 5px;
+    text-align: center;
+}
+
+
+.customer-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid rgb(120, 119, 119);
+}
+
+.customer-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid rgb(120, 119, 119);
+}
+
+input{
+    border: 2px solid rgb(120, 119, 119);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.add-transaction-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+}

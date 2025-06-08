@@ -1,0 +1,10 @@
+/* filepath: /home/devu/khatbook/src/app/components/button/button.css */
+.button {
+  padding: 10px 20px; 
+  font-size: 18px;   
+  background-color: #86C232; 
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
+}

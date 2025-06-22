@@ -1,6 +1,7 @@
 {
   "name": "khatbook",
   "version": "0.1.0",
+  "description": "A digital ledger application to manage customer accounts and transactions, built with Next.js, Prisma, and Tailwind CSS.",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
